@@ -22,13 +22,21 @@ Class Helper_Database
 		return $res;
 	}
 
-		public function fetchOne($query, $data = array())
+	public function fetchOne($query, $data = array())
 	{
 		$query = $this->db->prepare($query);
 		$query->execute($data);
 		$res = $query->fetch();
 		
 		return $res;
+	}
+
+	public function insert($query, $data = array())
+	{
+		$query = $this->db->prepare($query);
+		$query->execute($data);
+		
+		return $this->db-> lastInsertId();
 	}
 	
 }

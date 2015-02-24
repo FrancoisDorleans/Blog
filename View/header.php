@@ -24,58 +24,90 @@
 </head>
 <style>
 
-body {
-	background-color: #B1ABAB;
-
+*  {
+	/*width: 100%;*/
+	border-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
-#login-form {
-	width: 400px;
-	height: 200px;
-	margin: 170px auto;
-	background-color: white;
-	border-radius: 2%;
+#header{
+	width: 100%;
+	margin: 0 auto;
 }
 
-.top-border-row {
+.header-background {
+	width: 100%;
+	position: absolute;
+	background-color: #565a5c;
+	opacity: 0.95;
+	height: 90px;
+}
+
+.tab {
+	margin-top:  15px;
+	width: 70%;
+	display: inline-block;
+}
+
+.tab li   {
+	margin-top: 20px;
+	margin-left: 4%;
+	display: inline-block;
+} 
+
+a {
+	color: white;
+	font-size: 14
+	px;
+}
+
+.tab:first-child {
+	margin-left: 10%;
+}
+
+.action-set {
+	float: right;
+	display: block;
+	width: 200px;
+	margin-bottom: 15px;
 	margin-top: 15px;
-	background-color: #fff !important;
-	border-radius: 5%; 
-
 }
 
-.top-border-row h4 {
-	text-align: center;
+.action-set a {
+	margin-bottom: 8px;
 }
 
-input {
-	margin-top: 5px;
+.btn.btn-special{
+	position: relative;
+	right: 25px;
 }
-
 </style>
+
 <body>
 
+	<div id="header" class="row container">
+		<header>
+			<div class="header-background">
+				<div class="nav tab list-unstyled medium-right-margin col-md-10">
+					<ul class="link-reset">	
+						<li><a href="#"><p>Politique</p></a></li>
+						<li><a href="#"><p>Société</p></a></li>	
+						<li><a href="#"><p>Economie</p></a></li>
+						<li><a href="#"><p>Environnement</p></a></li>
+						<li><a href="#"><p>#Cute</p></a></li>
+					</ul>
+				</div>
 
-	<div id="login-form" class="container row">
-		<div class="col-md-12">
-			<div class="top-border-row col-md-12">
-				<h4> Bienvenue sur votre blog</h4>
+				<div class="action-set col-md-2">
 
+					<a class="btn btn-special" href="#">Rédiger un article</a>
+					<br>
+					<a href="logout.php">Se déconnecter</a>
+
+				</div>
 			</div>
-			<div class="login-input col-md-12">
-				<form method="post" action="login.php">
-					<input type="text" placeholder="username" name="username">				
-					<input type="password" placeholder="password" name="password">
-
-					<input id="submit" class="btn btn-block btn-primary large btn-large padded-btn-block" type="submit" value="Connexion">
-				</form>
-
-			</div>
-		</div>
+		</header>
 	</div>
-
-
-
 
 </body>
 

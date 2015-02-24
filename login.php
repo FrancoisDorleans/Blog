@@ -22,34 +22,42 @@ if (array_key_exists("username", $_POST) == false || array_key_exists("password"
 if (array_key_exists("password", $_POST) && array_key_exists("username", $_POST))
 {	
 	$userManager = new Model_User();
-	$username = $_POST["username"];
-	$password = $_POST["password"];
+	// $username = $_POST["username"];
+	// $password = $_POST["password"];
+	$user = $userManager->verifLogin($_POST["username"], $_POST["password"]);
+
+
 	// oui, alors on compare son mot de passe au mot de passe passé en POST
-	if ($userManager->verifLogin($_POST["username"], $_POST["password"]) != false)
-	{
+	if ($user != false)
+	{   
 		$_SESSION["ID"] = $user["ID"];
-		$_SESSION["username"] = $user["username"];	
+		$_SESSION["username"] = $user["username"];
+	
+		
+
 		header("Location: index.php");
 		exit();
+
+
 	}
 
 	else
 	{
 		// les mots de passe ne correspondent pas, on prépare un message d'erreur 
 		$_SESSION["error"] = "Invalid password";
-		echo "<script>alert(\"invalid password\")</script>"; 
+
+	
 	}
 }
 else
 {
 	// l'utilisateur n'existe pas, on prépare un message d'erreur
 	$_SESSION["error"] = "Unknown user";
-	echo "<script>alert(\"unknown user\")</script>"; 
+
 }
 
-var_dump($user["password"]);
 
-die;
+
 
 // Redirection vers l'index
 header("Location: index.php");
