@@ -191,7 +191,9 @@ div.overlay {
 }
 
 #section-top-stories p strong, 
-#section-tag p strong {
+#section-tag p strong,
+#author-article p strong,
+#contributeurs p strong {
 	color:  #931616;
 	font-size: 20px;
 	font-family: "Satisfy", helvetica, sans-serif;
@@ -270,7 +272,11 @@ div.overlay {
 			<div class='large-button-share fb-share-button' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button'>
 			</div>" ?>
 
-			<div id="right-column" class="col-md-2">
+			<div id="right-column" class="col-md-3">
+
+				<div id="author-article">
+					<p><strong>L'auteur</strong></p>
+				</div>
 
 				<div id="section-top-stories" >
 					<p><strong>Derniers articles</strong></p>
@@ -284,6 +290,10 @@ div.overlay {
 						
 
 						?>	
+				</div>
+
+				<div id="contributeurs">
+					<p><strong>Nos contributeurs</strong></p>
 				</div>
 
 
