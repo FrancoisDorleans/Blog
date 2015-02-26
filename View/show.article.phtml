@@ -16,60 +16,98 @@
 	<link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1-480b2a02b606076a457ece648a56a9b8.css" media="all" rel="stylesheet" type="text/css" />
  	<link href="https://a2.muscache.com/airbnb/static/p1/main-pretzel-4ab1c9299beb86cb6b946aef4a0c6056.css" media="screen" rel="stylesheet" type="text/css" />
  	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+ 	 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+ 	 <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+ 	 <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
  </head>
 
  <style >
 body {
-	background-color: #B1ABAB!important;
+	background-color: #f5f5f5!important;
 
 }
 
-.article-page {
+.page {
+	position: relative;
 	margin-top: 100px;
-	margin-left: 160px!important;
+	/*margin-left: 160px!important;*/
 	background-color: #f5f5f5;
-	width: 80%;
+	width: 100%;
 	height: 100%;
 }
 
+.page h5.title {
+	position: relative;
+	text-align: center;
+	top: 150px;
+	left: 5px;
+	font-size: 50px;
+	color: white;
+	font-weight: 600;
+	font-family: 'Slabo 27px', helvetica, arial, sans-serif;
+	z-index: 2;
+}
+
+
+
+#container-image{
+	position: absolute;
+	top: 21px;
+	height: 600px;
+	width: 100%;
+
+}
+
+div.overlay {
+	height: 600px;
+	width: 100%;
+	opacity: .25;
+	position: absolute;
+	left: 12px;
+	top: -50px;
+    background-color: black;
+    z-index: 1;
+;
+
+}
+
+.article-image img,
+.article-image  {
+	height: 600px;
+	width: 100%;
+	position: absolute;
+	top: -25px;
+	/*right: 0;*/
+
+}
 
 #article {
-	width: 72%;
-	height: 100%;
-	margin-right: 10px;
+	float: left;
+	width: 65%;
+	border: solid 1px;
 	
 }
 
 .article {
-	margin-top: 30px;
+	float: left;
+	margin-left: 50px;
+	margin-top: 410px;
+
 }
 
 .article:nth-of-type(1) {
 	margin-top: 10px;
 }
 
-.article h5 {
-	font-size: 30px;
-	color: black;
-	font-weight: 600;
-	font-family: 'Slabo 27px', helvetica, arial, sans-serif;
-}
 
 .article p{
 	margin-top: 20px;
-	width: 550px;
 	font-size: 15px;
 	color: black;
-	font-family: helvetica, arial, sans-serif;
+	font-family: "Raleway", helvetica, arial, sans-serif;
 
 }
 
-.article img {
-	margin: 5px auto;
-	height: 300px;
-	width: 550px;
-
-}
 
 .article a:hover, 
 .article a {
@@ -77,16 +115,87 @@ body {
 
 }
 
+#comment-article {
+	margin-bottom: 100px;
+	margin-left: 50px;
+	width: 500px;
+	height: 300px;
+	border: solid 1px;
+}
+
+#comment-article textarea {
+	height: 100px;
+}
+
+#comment-article h3 {
+	font-family: "Satisfy", helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	color:  #931616;
+}
+
+#comment-submit {
+	margin-top: 10px;
+	width: 200px;
+	float: right;
+}
+
+#no-log-comment {
+	margin: 5px auto;
+	width: 200px;
+
+}
+
+#show-comments {
+	border: solid 1px;
+	margin-left: 50px;
+}
+
+.comment {
+	margin-left: 50px;
+	width: 40%;
+	margin-bottom: 30px;
+	font-family: "Raleway", helvetica, sans-serif;
+
+}
+
+.comment .date {
+	display: inline-block;
+}
+
+.comment span {
+	color: #931616;
+	font-weight: bold;
+	margin-left: 10px;
+
+}
+
+.comment p {
+	font-size: 13px;
+	margin-top: 10px;
+
+}
+
 #right-column {
+	margin-top: 460px;
 	float: right;
 	width: 26%;
 	color: black;
 	height: 100%;
+	border: solid 1px;
 
 }
 
 #section-top-stories {
 	margin-top: 5px;
+}
+
+#section-top-stories p strong, 
+#section-tag p strong {
+	color:  #931616;
+	font-size: 20px;
+	font-family: "Satisfy", helvetica, sans-serif;
+	font-weight: bold;
 }
 
 .top-articles h5 {
@@ -114,70 +223,55 @@ body {
 	  list-style-type: none;
 }
 
-
-
-/*body {
-	background-color: #B1ABAB!important;
-
+.tags {
+	display: none;
 }
 
-.article-page {
-	margin: 0 auto!important;
-/*	margin-left: 160px!important;*/
-/*	background-color: #f5f5f5;
-	width: 80%;
-	
-}
-*/
-
-
-/*#article {
-	width: 100%;
-	height: 100%;
-	margin: 80px auto;
-	background-color: #f5f5f5;
-	border: solid 1px;
-	
+.hidden-subscribe {
+	display: none;
 }
 
-.article h5 {
-	text-align: center;
-	font-size: 30px;
-	color: black;
-	font-weight: 600;
-	font-family: 'Slabo 27px', helvetica, arial, sans-serif;
-}
 
-.article p{
-	width: 100%;
-	font-size: 15px;
-	color: black;
-	font-family: helvetica, arial, sans-serif;
 
-}
-
-.article img {
-    margin-left: 150px;
-    margin-bottom: 20px;
-	height: 300px;
-	width: 550px;
-}*/
  </style>
 
  <body>
 
+
+
  	<?= include("View/header.phtml");?>
 
- 	<div class="row container article-page">
-		<div id="article" class="col-md-12">
-			<article>
+ 	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+ 	<div class="row container page">
+		
 			<?php
-			echo "<div class='article'><h5>".$thisArticle["title"]."</h5><img src='".$thisArticle["image_url"]."'>"."<p>".$thisArticle["text"]."</p></a></div>";				
-			?> 
-			</article>
-		</div>
-	
-			<div id="right-column" class="col-md-3">
+
+			echo 
+
+			"
+			<div id='container-image'>
+			<div class='overlay'></div>
+			<div class='article-image col-md-12'><img src='".$thisArticle["image_url"]."'></div>
+			</div>
+
+			
+
+			<h5 class='title'>".$thisArticle["title"]."</h5>
+			
+
+			<div class='large-button-share fb-share-button' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button'>
+			</div>" ?>
+
+			<div id="right-column" class="col-md-2">
+
 				<div id="section-top-stories" >
 					<p><strong>Derniers articles</strong></p>
 
@@ -189,9 +283,10 @@ body {
 							}
 						
 
-						?>
-
+						?>	
 				</div>
+
+
 				<div id="section-tag">
 					<p><strong> Thèmes des articles</strong></p>
 						<ul class="theme-articles">
@@ -205,10 +300,126 @@ body {
 
 				</div>
 			</div>
+
+			<div id="article" class="article col-md-8">
+			<article>
+
+			<div id='subscribe-email'> 
+			<button id="js-onClick-show">Abonnez-vous à Polis</button>
+				<div class='hidden-subscribe col-md-12'>
+				<p> Recevez chaque semaine le meilleur de Polis</p>
+				<form id="form-subscribe" method='post'>
+				<input id="subscribe" type='text' placeholder='Entrez votre email' name='email'>
+				<input type="submit" value="S'abonner" >
+				</form>
+
+				</div>
+			</div>
+
+			
+
+
+
+
+
+			<?= "<p>".$thisArticle["text"]."</p> <div class='tags'><strong><h3>".$thisArticle["tags"]."</h3></strong></div></div>";				
+			?> 
+
+
+			</article>
+
+
+			<?php if(array_key_exists("ID", $_SESSION)): ?>
+			<div id="comment-article">
+				<h3>Réagissez à cet article</h3>
+				<form method="post" action="comment.php">
+
+					<textarea id="comment" name="comment"> </textarea>
+					<input id="comment-submit" class="btn btn-block btn-primary large btn-large padded-btn-block" type="submit" value="Commenter">
+					<input type="hidden" name="IDarticle" value="<?=$thisArticle['ID']?>">
+
+				</form>
+			</div>
+			
+
+			<?php else: ?>
+			<div id="comment-article">
+				<h3>Réagissez à cet article</h3>
+				<form method="post" action="register.php">
+
+
+					<input id="no-log-comment" class="btn btn-block btn-primary large btn-large padded-btn-block" type="submit" value="Commenter">
+					<input type="hidden" name="log" value="hello">
+					<input type="hidden" name="IDarticle" value="<?=$thisArticle['ID']?>"> 
+
+
+				</form>
+			</div>
+			<?php endif ?>
+
+			<!-- Afficher les commentaires ici -->
+			<div id="show-comments row container">
+						<?php
+						foreach( $comments as $comment){
+						echo "<div class='comment col-md-6'>
+						
+						<div class='date'> Written on ".$comment["date"]=date("j F")." by </div><span>" .$comment["username"]."</span>
+						<p>".$comment["comment"]."</p><hr></div>";			
+						}					
+					?>
+			
+
+
+			</div>
+
+
+
+
 	</div>
 
+
+		</div>
+	
+			
 
 
 
  </body>
+<script>
+
+$("button").click(function(){
+    $(".hidden-subscribe").toggle();
+});
+
+$('#form-subscribe').on('submit', subscribeEmail);
+
+
+function subscribeEmail(event){
+
+	event.preventDefault();
+
+	var email = $('#subscribe').val();
+	alert(email);
+
+	var config = {url: "subscribe.php?email="+email};
+
+	$.ajax(config).done(addEmail).fail(ajaxError);
+
+	return false;
+
+}; 
+
+function addEmail() {
+	alert("Nous allons vous spammerrr !!");
+	$(".hidden-subscribe").toggle();
+}
+
+function ajaxError(){}
+
+</script>
+
+
+
+
+
  </html>

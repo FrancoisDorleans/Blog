@@ -21,7 +21,7 @@
 
 <style>
 body {
-	background-color: #B1ABAB!important;
+	background-color: #f5f5f5!important;
 }
 
 .form-container {
@@ -59,18 +59,36 @@ body {
 
 <?= include("View/header.phtml");?>
 
+	<!-- Page de création d'un article -->
+
 	<form enctype="multipart/form-data" method="post" action="post.php">
 		<div class="form-container row container">
 
 			<input id="title-input" type="text" placeholder="Titre de l'article" name="title">
 
+
 			<div id="center-form">
 				<p>Rédiger votre article</p>
 			<textarea id="text-input" name="text"></textarea>
 			
-				<p>Ajouter une image à votre article</p>
-			<input id="image-input" type="file" placeholder="Ajouter une image" accept="image/*" name="image">
+				<p>Ajoutez une image à votre article</p>
+			<input id="image-input" type="file" placeholder="Ajouter une image" accept="image/*" name="file">
+		
+
+
+			<p>Choisissez une catégorie pour votre article</p>
+			<select name="theme">
+				<option  value="economie">Economie</option>
+				<option name="theme" value="societe">Société</option>
+				<option name="theme" value="politique">Politique</option>
+				<option name="theme" value="technologie">Technologie</option>
+				<option name="theme" value="cute">#Cute</option>
+			</select>
+
+			<p>Ajoutez des mots-clés séparés par une virgule</p>
+			<input class="tag-words" type="text" name="tags" placeholder="mots-clés">
 			</div>
+
 			<input id="submit-article" class="btn btn-block btn-primary large btn-large padded-btn-block" type="submit" value="Publier">
 		</div>
 

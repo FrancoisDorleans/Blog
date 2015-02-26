@@ -15,6 +15,9 @@
 
 	<link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1-480b2a02b606076a457ece648a56a9b8.css" media="all" rel="stylesheet" type="text/css" />
  	<link href="https://a2.muscache.com/airbnb/static/p1/main-pretzel-4ab1c9299beb86cb6b946aef4a0c6056.css" media="screen" rel="stylesheet" type="text/css" />
+ 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+ 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+ 	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
  <!-- 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"> -->
 <!--  	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css.map"> -->
 <!--  	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css"> -->
@@ -40,14 +43,40 @@
 .header-background {
 	width: 100%;
 	position: absolute;
-	background-color: #565a5c;
+	background-color: #931616;
 	opacity: 0.95;
-	height: 70px;
+	height: 90px;
+}
+
+
+.logo {
+	text-align: center;
+	margin-top: 15px;
+
+}
+
+.logo h1 {
+	font-family: "Satisfy", helvetica, sans-serif; 
+	color: white;
+	font-size: 36px;
+	margin-bottom: 2px;
+}
+
+.logo p {
+	font-family: "Raleway", helvetica, sans-serif; 
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.logo a,
+.logo a:hover {
+	text-decoration: none;
 }
 
 .tab {
 	margin-top:  10px;
-	width: 70%;
+/*	width: 50%;*/
 	display: inline-block;
 }
 
@@ -60,6 +89,12 @@
 a {
 	color: white;
 	font-size: 14px;
+	font-family: "Raleway", helvetica, sans-serif;
+	font-weight: 700;
+}
+
+a:hover {
+	color: #F5F6CE;
 }
 
 .tab:first-child {
@@ -69,7 +104,7 @@ a {
 .action-set {
 	float: right;
 	display: block;
-	width: 200px;
+/*	width: 200px;*/
 	margin-bottom: 15px;
 	margin-top: 15px;
 }
@@ -82,20 +117,44 @@ a {
 	position: relative;
 	right: 25px;
 }
+
+.search-bar {
+	position: relative;
+	top: -25px;
+	left: 70px;
+	width: 500px;
+}
+
+
+#search-bar #search {
+	display: inline-block;
+	width: 300px;
+}
+
+#search-bar #submit {{
+	height: 100px;
+}
 </style>
 
 <body>
 
 	<div id="header" class="row container">
 		<header>
-			<div class="header-background">
-				<div class="nav tab list-unstyled medium-right-margin col-md-10">
+			<div class="header-background ">
+
+					<div class="logo col-md-3">
+						<a href="main.php">
+							<h1>Polis</h1>
+							<p> Reprendre le pouvoir qui nous appartient</p>
+						</a>	
+					</div>
+				<div class="nav tab list-unstyled medium-right-margin col-md-7">
 					<ul class="link-reset">	
-						<li><a href="#"><p>Politique</p></a></li>
-						<li><a href="#"><p>Société</p></a></li>	
-						<li><a href="#"><p>Economie</p></a></li>
-						<li><a href="#"><p>Technologie</p></a></li>
-						<li><a href="#"><p>#Cute</p></a></li>
+						<li><a href="main.php?theme=politique"><p>Politique</p></a></li>
+						<li><a href="main.php?theme=societe"><p>Société</p></a></li>	
+						<li><a href="main.php?theme=economie"><p>Economie</p></a></li>
+						<li><a href="main.php?theme=technologie"><p>Technologie</p></a></li>
+						<li><a href="main.php?theme=cute"><p>#Cute</p></a></li>
 					</ul>
 				</div>
 
@@ -103,7 +162,21 @@ a {
 
 					<a class="btn btn-special" href="post.php">Rédiger un article</a>
 					<br>
+					<?php if(array_key_exists("ID", $_SESSION)): ?>
 					<a href="logout.php">Se déconnecter</a>
+					<?php else: ?>
+					<a href="login.php">Se connecter</a>
+					<?php endif ?>
+
+				</div>
+
+				<div class="search-bar col-md-6">
+					<form id="search-bar" method="get" action="search.php" >
+						<input id="search" type="text" placeholder="Chercher un article" name="search">
+						<input id="submit" type="submit" value="Chercher">
+
+					</form>
+
 
 				</div>
 			</div>
@@ -111,6 +184,41 @@ a {
 	</div>
 
 </body>
+<script>
 
+// 	 $("#search-bar").on("keyup", getArticle);
+
+// 	function getArticle(){
+
+// 		var search = $('#search').val();
+// 		console.log(search);
+
+// 		// aller chercher en ajax le résultat de la requête à la page :
+// 		var config = {url: "search.php?search="+search};
+		
+// 		$.ajax(config).done(displayResult).fail(ajaxError);
+
+// 	}
+
+// // 	function displayResult(data){
+
+// //  		$("#display").empty();
+// //  		console.log(data);
+// // 		for (var i = 0; i < data.search.length; i++ ){
+			
+// // 			$("#display").append("<tr class='result'><td>"+data[i]["title"]+"</td> <td>"+data[i]["image_url"]+"</td> <td>"+data[i]["text"]+"<td></tr>");
+// // 		}	
+
+
+
+// 	}
+
+// 	function ajaxError () {
+// 	console.log("Erreur ajax");
+// }
+
+
+
+</script>
 
 </html>

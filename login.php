@@ -13,8 +13,9 @@ $db = new Helper_Database("mysql:host=127.0.0.1;dbname=blog", 'root', 'troiswa')
 if (array_key_exists("username", $_POST) == false || array_key_exists("password", $_POST) == false)
 {
 
-	header("Location: index.php");
-	exit();
+	// header("Location: login.php");
+	// exit();
+	include "View/login.phtml";
 }
 
 
@@ -22,8 +23,6 @@ if (array_key_exists("username", $_POST) == false || array_key_exists("password"
 if (array_key_exists("password", $_POST) && array_key_exists("username", $_POST))
 {	
 	$userManager = new Model_User();
-	// $username = $_POST["username"];
-	// $password = $_POST["password"];
 	$user = $userManager->verifLogin($_POST["username"], $_POST["password"]);
 
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<script type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="boostrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="boostrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="boostrap/js/npm.js"></script>
+
+
+
+
+	<link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1-480b2a02b606076a457ece648a56a9b8.css" media="all" rel="stylesheet" type="text/css" />
+ 	<link href="https://a2.muscache.com/airbnb/static/p1/main-pretzel-4ab1c9299beb86cb6b946aef4a0c6056.css" media="screen" rel="stylesheet" type="text/css" />
+ 	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+ 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+ </head>
+<style>
+
+body {
+	background-color: #f5f5f5!important;
+}
+
+#register-form {
+	width: 400px;
+	height: 100%;
+	margin: 170px auto;
+	background-color: #f5f5f5;
+	border-radius: 2%;
+}
+
+
+#register-form input {
+	margin-bottom: 10px;
+}
+
+.log-in-link,
+.log-in-link a,
+.log-in-link a:hover {
+	color: #E62E00;
+	margin: 15px auto;
+	text-align: center;
+	font-family: "Raleway", helvetica, sans-serif;
+	font-size: 13px;
+}
+
+.submit-btn {
+	width: 200px!important;
+	margin: 0 auto;
+}
+
+.top-border-row {
+	margin-top: 15px;
+	background-color: #f5f5f5 !important;
+	border-radius: 5%; 
+
+}
+
+.top-border-row h4 {
+	text-align: center;
+	font-weight: normal;
+	font-size: 30px;
+	font-family: "Lobster", helvetica, sans-serif;
+	color: #E62E00;
+}
+
+#register-form p {
+	font-style: "Raleway", helvetica, sans-serif;
+	text-align: center;
+	color:  #E62E00;
+}
+
+</style>
+
+<body>
+	<?= include("View/header.phtml");?>
+	<div id="register-form" class="row container">
+
+		<div class="top-border-row col-md-12">
+			<h4> Inscrivez-vous</h4>
+			<?= $message?>
+
+		</div>
+
+		<form enctype="multipart/form-data" class="login-input col-md-12" method="post" action="register.php">
+			<input type="text" placeholder="username" name="username">
+			<input type="text" placeholder="Votre email" name="email">
+			<input  type="password" placeholder="Entrez un mot de passe" name="password">
+			<p>Ajouter une photo de profil</p>
+			<input type="file" accept="image/*" name="file">
+
+			<input class="submit-btn btn btn-block btn-primary large btn-large padded-btn-block" type="submit" name="submit">
+
+
+
+			<?php if(isset($articleID) == true):?>
+			<input type="hidden" name="IDarticle" value="<?= $articleID?>">
+			<?php endif ?>
+
+		</form>
+		<div class="log-in-link">
+			<a href="login.php">J'ai déjà un compte</a>
+		</div>
+	</div>
+
+
+
+
+
+</body>

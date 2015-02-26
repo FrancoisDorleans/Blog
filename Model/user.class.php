@@ -25,3 +25,24 @@ class Model_User
 		
 	}
 }
+
+class Model_Add_User{
+	private $db;
+	
+	public function __construct()
+	{
+		$this->db = new Helper_Database();	
+	}
+	
+	public function createUser($username, $email, $password, $image){
+	// On insère un nouvel user dans la base de données
+	$newUser = $this->db->insert("INSERT INTO user(username, email, password, image)VALUES(:username, :email, :password, :image)", array(
+		"username" => $username,
+		"email" => $email, 
+		"password" => $password,
+		"image" => $image,
+		));
+
+	return $newUser;
+	}
+}

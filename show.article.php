@@ -3,6 +3,7 @@
 require_once ("Helper/database.php");
 require_once("Model/user.class.php");
 require_once("Model/article.class.php");
+require_once("Model/comment.class.php");
 
 session_start();
 
@@ -13,7 +14,9 @@ session_start();
 
 	$articleShow = new Model_Show_Article ();
 
-	$thisArticle = $articleShow->showArticle($_GET["ID"]);
+	// En cas de commentaire, l'ID article n'est pas défini
+		$thisArticle = $articleShow->showArticle($_GET["ID"]);
+
 
 
 	// Montrer les derniers articles
@@ -21,6 +24,13 @@ session_start();
 	$articleManager = new Model_article ();
 
 	$articles = $articleManager->loadArticles(5);
+
+
+	// Montrer les commentaires de l'article
+
+	$modelComment = new Model_Show_Comment(); 
+
+	$comments = $modelComment->showComment($_GET["ID"]);
 
 
 include("View/show.article.phtml");
